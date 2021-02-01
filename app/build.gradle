@@ -31,18 +31,18 @@ android {
 
 dependencies {
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
-    def grpc_version = '1.22.1'
-    def lifecycle_version = '2.3.0-beta01'
+    def grpc_version = '1.35.0'
+    def lifecycle_version = '2.3.0-rc01'
     def mockito_version = "3.0.0"
-    def mockk_version = '1.10.2'
+    def mockk_version = '1.10.5'
     def multidex_version = "2.0.1"
-    def truth_version = '1.1'
+    def truth_version = '1.1.2'
 
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.3.2'
     implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation "androidx.multidex:multidex:$multidex_version"
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'javax.annotation:javax.annotation-api:1.3.2'
