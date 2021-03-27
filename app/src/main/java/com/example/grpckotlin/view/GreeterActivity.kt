@@ -2,19 +2,23 @@ package com.example.grpckotlin.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.grpckotlin.R
 import com.example.grpckotlin.adapters.GreeterFragmentsViewPagerAdapter
-import kotlinx.android.synthetic.main.activity_greeter.*
+import com.example.grpckotlin.databinding.ActivityGreeterBinding
+
 
 class GreeterActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityGreeterBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_greeter)
+        binding= ActivityGreeterBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
 
         val greeterFragmentsViewPagerAdapter = GreeterFragmentsViewPagerAdapter(supportFragmentManager)
-        greeterViewPager.adapter = greeterFragmentsViewPagerAdapter
+        binding.greeterViewPager.adapter = greeterFragmentsViewPagerAdapter
 
-        greeterTabLayout.setupWithViewPager(greeterViewPager)
+        binding.greeterTabLayout.setupWithViewPager(binding.greeterViewPager)
     }
 }
