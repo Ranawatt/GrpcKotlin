@@ -32,9 +32,9 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.9.1'
     def grpc_version = '1.36.0'
-    def lifecycle_version = '2.3.0'
+    def lifecycle_version = '2.9.1'
     def mockito_version = "3.0.0"
     def mockk_version = '1.10.6'
     def multidex_version = "2.0.1"
@@ -42,16 +42,16 @@ dependencies {
 
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.3.2'
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.core:core-ktx:1.16.0'
+    implementation 'androidx.appcompat:appcompat:1.7.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
     implementation "androidx.multidex:multidex:$multidex_version"
-    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'com.google.android.material:material:1.12.0'
     implementation 'javax.annotation:javax.annotation-api:1.3.2'
 
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
 
     // gRPC
     implementation "io.grpc:grpc-okhttp:$grpc_version"
@@ -62,10 +62,10 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
 
     // Instrumented tests
-    androidTestImplementation 'androidx.test:runner:1.3.0'
+    androidTestImplementation 'androidx.test:runner:1.6.2'
 
     // Unit tests
-    testImplementation "androidx.arch.core:core-testing:2.1.0"
+    testImplementation 'androidx.arch.core:core-testing:2.2.0'
     testImplementation "com.google.truth:truth:$truth_version"
     testImplementation "io.grpc:grpc-testing:$grpc_version"
     testImplementation "io.mockk:mockk:$mockk_version"
@@ -100,3 +100,25 @@ protobuf {
         }
     }
 }
+
+//protobuf {
+//    protoc {
+//        artifact = "com.google.protobuf:protoc:3.9.0"
+//    }
+//    plugins {
+//        id("grpc") {
+//            artifact = "io.grpc:protoc-gen-grpc-java:1.22.1"
+//        }
+//        id("grpckt") {
+//            artifact = "io.grpc:protoc-gen-grpc-kotlin:1.0.0:jdk7@jar"
+//        }
+//    }
+//    generateProtoTasks {
+//        ofSourceSet("main").forEach {
+//            it.plugins {
+//                id("grpc")
+//                id("grpckt")
+//            }
+//        }
+//    }
+//}
